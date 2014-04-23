@@ -26,15 +26,20 @@
 		$('#typeContinuer').click(function(e){
 			e.preventDefault();		
 			$('#annonceOffre').show();
-			$('#annonceType').hide();});
+			$('#bouton2').show();
+			$('#annonceType').hide();
+			$('#bouton1').hide();});
 		$('#typeOffre').click(function(e){
 			e.preventDefault();
 			$('#annonceRediger').show();
+			$('#bouton3').show();
 			$('#annonceOffre').hide();});
 		$('#typeRetour1').click(function(e){
 			e.preventDefault();
 			$('#annonceType').show();
-			$('#annonceOffre').hide();});
+			$('#bouton1').show();
+			$('#annonceOffre').hide();
+			$('#bouton2').hide();});
 		$('#typeRediger').click(function(e){
 			e.preventDefault();
 			$('#annonceValider').show();
@@ -42,10 +47,13 @@
 		$('#typeRetour2').click(function(e){
 			e.preventDefault();
 			$('#annonceOffre').show();
-			$('#annonceRediger').hide();});
+			$('#bouton2').show();
+			$('#annonceRediger').hide();
+			$('#bouton3').hide();});
 		$('#typeRetour3').click(function(e){
 			e.preventDefault();
 			$('#annonceRediger').show();
+			$('#bouton3').show();
 			$('#annonceValider').hide();});});
 	</script>
 	
@@ -69,11 +77,14 @@
 		
 		<Input type="radio" name="type" value="offre"> J'offre <br><br>
 		<Input type="radio" name="type" value="cherche"> Je cherche <br>   
-			 
-		<a id="typeContinuer" href="" class="bouton">Continuer</a>
+			
+		</div>	 
 		
+		<div id="bouton1" style="display: block;">
+			<a id="typeContinuer" href="" class="bouton">Continuer</a> 
 		</div>
-
+		
+		
 		<div id="annonceOffre" style="display: none;">	
 		
 		<div class="h2"><h2>Choix de la faculté :</h2></div>
@@ -141,14 +152,15 @@
 				Spécifier le cours 
 				<Input type="text" name="choixNotes">
 		
+		</div>
 		
+		<div id="bouton2" style="display: none;"> 
 			<a id="typeOffre" href="" class="bouton">Continuer</a>
 			<a id="typeRetour1" href="" class="bouton">Retour</a>
 			<br>
-		
-		
 		</div>
-
+		
+		
 		<div id="annonceRediger" style="display: none;">
 		<div class="h2"><h2>Rédiger une annonce</h2></div>
 		
@@ -209,10 +221,11 @@
 
 			</table>
 
+		</div>
 		
+		<div id="bouton3" style="display: none;">
 			<a id="typeRediger" href="" class="bouton">Continuer</a>		
 			<a id="typeRetour2" href="" class="bouton">Retour</a>
-		
 		</div>
 	
 		<div id="annonceValider" style="display: none;">
