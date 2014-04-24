@@ -33,7 +33,8 @@
 			e.preventDefault();
 			$('#annonceRediger').show();
 			$('#bouton3').show();
-			$('#annonceOffre').hide();});
+			$('#annonceOffre').hide();
+			$('#bouton2').hide();});
 		$('#typeRetour1').click(function(e){
 			e.preventDefault();
 			$('#annonceType').show();
@@ -42,8 +43,10 @@
 			$('#bouton2').hide();});
 		$('#typeRediger').click(function(e){
 			e.preventDefault();
+			$('#annonceType').show();
+			$('#annonceOffre').show();
 			$('#annonceValider').show();
-			$('#annonceRediger').hide();});
+			$('#bouton3').hide();});
 		$('#typeRetour2').click(function(e){
 			e.preventDefault();
 			$('#annonceOffre').show();
@@ -54,6 +57,8 @@
 			e.preventDefault();
 			$('#annonceRediger').show();
 			$('#bouton3').show();
+			$('#annonceType').hide();
+			$('#annonceOffre').hide();
 			$('#annonceValider').hide();});});
 	</script>
 	
@@ -70,13 +75,14 @@
 		</ul>
 		<div class="band">Petites annonces de l'université de Neuchâtel</div>
 		
-		<div id="annonceType" style="display: block;">
-		<div class="h2"><h2> Type de l'annonce </h2></div>
-		
 		<Form method="post" action="creer/sauvegarder"> 
-		
-		<Input type="radio" name="type" value="offre"> J'offre <br><br>
-		<Input type="radio" name="type" value="cherche"> Je cherche <br>   
+			
+		<div id="annonceType" style="display: block;">
+			
+		<div class="h2"><h2> Type de l'annonce </h2></div>
+				
+		<Input type="radio" name="type" value="offre" required> J'offre <br><br>
+		<Input type="radio" name="type" value="cherche" required> Je cherche <br>   
 			
 		</div>	 
 		
@@ -101,13 +107,13 @@
 		
 		<div class="h2"><h2>Choix de la catégorie :</h2></div>
 	
-			<Input type="radio" name="choix" value="livres"> Livres 
+			<Input type="radio" name="choix" value="livres" required> Livres 
 				<select name="choixLivres" size="1">
 					<option value="de cours">de cours</option>
 					<option value="autres">Autres</option>
 				</select> <br> <br> 
 					
-			<Input type="radio" name="choix" value="soutien"> Cours de soutien
+			<Input type="radio" name="choix" value="soutien" required> Cours de soutien
 				<select name="choixSoutien" size="1">
 					<optgroup label="FSE">
 						<option value="ecointer">Eco Inter.</option>
@@ -127,7 +133,7 @@
 				</select>
 			<br><br>
 					
-			<Input type="radio" name="choix" value="logements"> Logements 
+			<Input type="radio" name="choix" value="logements" required> Logements 
 				<select name="choixLogements" size="1">
 					<option value="coloc">Colocation</option>
 					<option value="appart">Appartements</option>
@@ -135,7 +141,7 @@
 					<option value="chambre double">Chambre double</option>
 				</select> <br> <br> 
 					
-			<Input type="radio" name="choix" value="courslangue"> Cours de langue 
+			<Input type="radio" name="choix" value="courslangue" required> Cours de langue 
 				<select name="choixCourslangue" size="1">
 					<option value="FR">Français</option>
 					<option value ="ENG">Anglais</option>
@@ -148,7 +154,7 @@
 					<option value="HEB">Hébreu</option>
 				</select> <br> <br> 
 					
-			<Input type="radio" name="choix" value="notes"> Notes de cours <br> 
+			<Input type="radio" name="choix" value="notes" required> Notes de cours <br> 
 				Spécifier le cours 
 				<Input type="text" name="choixNotes">
 		
@@ -177,7 +183,7 @@
 
 				<tr>
 					<td>Prix de l'annonce</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="prixannonce"></td>
+					<td><Input type="text" style="width: 98%; height: 100%" name="prixannonce" required></td>
 				<tr>
 					<td>Image</td>
 					<td><Input type="file" style="width: 98%; height: 100%" name="image"></td>
@@ -205,7 +211,7 @@
 
 				<tr>
 					<td>NPA/localité</td>
-					<td><Input type="number" min="1000" max="9699" style="width: 98%; height: 100%" name="NPA"></td>
+					<td><Input type="number" min="1000" max="9699" style="width: 98%; height: 100%" name="NPA" required></td>
 					<td><Input type="text" style="width: 98%; height: 100%" name="localite" required></td>
 				</tr>
 
@@ -229,21 +235,17 @@
 		</div>
 	
 		<div id="annonceValider" style="display: none;">
-		<div class="h2"><h2>Résumé de l'offre :</h2></div>
-
 			
 			
-			<Input type="checkbox"> Je confirme avoir lu et accepté les conditions générales <br>
-
-			
+			<Input type="checkbox" required> Je confirme avoir lu et accepté les conditions générales <br>
+		
 			
 			<a id="typeRetour3" href="" class="bouton">Retour</a>
-			<input type="submit" value="Enregistrer" class="bouton"/>
-					
-			<br>
-			<br>
-		</form>	
+			<input type="submit" value="Enregistrer" class="bouton"/><br><br>
+			
 		</div>
+		</form>	
+		
 	</div>
 
 
