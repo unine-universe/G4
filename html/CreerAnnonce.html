@@ -58,12 +58,13 @@
 			$('#annonceValider').hide();});});
 	</script>
 	
-<div class="content">
+
 		
-		<div class="header">Connecté en tant que : "user" | Logout</div>
+	<div class="header">Connecté en tant que : "user" | Logout</div>
+	<div class="content">
 		<div class="logo"><img src="/img/Logo-unine.png" alt="Unine Logo" /></div>
 		
-
+		
 		<ul class="nav">
 				<li class="nav-item"><a href="">Type de l'annonce</a></li>
 				<li class="nav-item"><a href="">Catégories </a></li>
@@ -72,12 +73,12 @@
 		</ul>
 		
 		
-		<div class = "form">
+	<div class = "form">
 		<Form method="post" action="creer/sauvegarder"> 
 			
 		<div id="annonceType" style="display: block;">
 			
-		<div class="h2"><h2> Type de l'annonce </h2></div>
+		<h2> Type de l'annonce </h2>
 				
 		<Input type="radio" name="type" value="offre" required> J'offre <br><br>
 		<Input type="radio" name="type" value="cherche" required> Je cherche <br>   
@@ -89,89 +90,100 @@
 		</div>
 		
 		
-		<div id="annonceOffre" style="display: none;">	
+	<div id="annonceOffre" style="display: none;">	
 		
-		<div class="h2"><h2>Choix de la faculté :</h2></div>
+		<h2>Choix de la faculté :</h2>
 		
-		<label for="Cours de langues"> Faculté : </label>
-				<select name="faculte" size="1">
+		<table>
+			<tr>
+				<td> Faculté : </td>
+				<td><select id="faculte" size="1">
 					<option value="FLSH">Lettres et Sciences Humaines</option>
 					<option value="FSE">Sciences Economiques</option>
 					<option value="FD">Droit</option>
 					<option value="FS">Sciences</option>
 					<option value="FT">Théologie</option>
 					<option value="ALL">Toutes</option>
-				</select>	
+				</select></td>	
+			</tr>
 		
-		<div class="h2"><h2>Choix de la catégorie :</h2></div>
+			<tr><td><h2>Choix de la catégorie :</h2></td></tr>
+		
+			<tr>
+				<td><Input type="radio" name="choix" value="livres" required>  Livres </td>
+				<td><select name="choixLivres" size="1">
+						<option value="de cours">de cours</option>
+						<option value="autres">Autres</option>
+					</select></td>
+			</tr>
+			
+			<tr>		
+				<td><Input type="radio" name="choix" value="soutien" required> Cours de soutien</td>
+				<td><select name="choixSoutien" size="1">
+						<optgroup label="FSE">
+							<option value="ecointer">Eco Inter.</option>
+						</optgroup>
+						<optgroup label="FD">
+							<option value="droit constit">Droit Constit</option>
+						</optgroup>
+						<optgroup label="FLSH">
+							<option value="philo">Philo</option>
+						</optgroup>
+						<optgroup label="FD">
+							<option value="seigneur">Seigneur</option>
+						</optgroup>
+						<optgroup label="FS">
+							<option value="Bio">Biologie</option>
+						</optgroup>
+					</select></td>
+			</tr>
+			
+			<tr>	
+				<td><Input type="radio" name="choix" value="logements" required> Logements</td> 
+				<td><select name="choixLogements" size="1">
+						<option value="coloc">Colocation</option>
+						<option value="appart">Appartements</option>
+						<option value="chambre single">Chambre individuelle</option>
+						<option value="chambre double">Chambre double</option>
+					</select> </td> 
+			</tr>
+			
+			<tr>		
+				<td><Input type="radio" name="choix" value="courslangue" required> Cours de langue</td> 
+				<td><select name="choixCourslangue" size="1">
+						<option value="FR">Français</option>
+						<option value ="ENG">Anglais</option>
+						<option value ="DE">Allemand</option>
+						<option value="IT">Italien</option>
+						<option value="ESP">Espagnol</option>
+						<option value="CHN">Chinois/mandarin</option>
+						<option value="RUS">Russe</option>
+						<option value="ARA">Arabe</option>
+						<option value="HEB">Hébreu</option>
+					</select></td>
+			</tr>
+			
+			<tr>		
+				<td><Input type="radio" name="choix" value="notes" required> Notes de cours <br> </td>
+				<td><Input type="text" name="choixNotes">(Spécifier le cours)</td>
+			</tr>
+			
+		</table>
+	</div><br><br>
 	
-			<Input type="radio" name="choix" value="livres" required> Livres 
-				<select name="choixLivres" size="1">
-					<option value="de cours">de cours</option>
-					<option value="autres">Autres</option>
-				</select> <br> <br> 
-					
-			<Input type="radio" name="choix" value="soutien" required> Cours de soutien
-				<select name="choixSoutien" size="1">
-					<optgroup label="FSE">
-						<option value="ecointer">Eco Inter.</option>
-					</optgroup>
-					<optgroup label="FD">
-						<option value="droit constit">Droit Constit</option>
-					</optgroup>
-					<optgroup label="FLSH">
-						<option value="philo">Philo</option>
-					</optgroup>
-					<optgroup label="FD">
-						<option value="seigneur">Seigneur</option>
-					</optgroup>
-					<optgroup label="FS">
-						<option value="Bio">Biologie</option>
-					</optgroup>
-				</select>
-			<br><br>
-					
-			<Input type="radio" name="choix" value="logements" required> Logements 
-				<select name="choixLogements" size="1">
-					<option value="coloc">Colocation</option>
-					<option value="appart">Appartements</option>
-					<option value="chambre single">Chambre individuelle</option>
-					<option value="chambre double">Chambre double</option>
-				</select> <br> <br> 
-					
-			<Input type="radio" name="choix" value="courslangue" required> Cours de langue 
-				<select name="choixCourslangue" size="1">
-					<option value="FR">Français</option>
-					<option value ="ENG">Anglais</option>
-					<option value ="DE">Allemand</option>
-					<option value="IT">Italien</option>
-					<option value="ESP">Espagnol</option>
-					<option value="CHN">Chinois/mandarin</option>
-					<option value="RUS">Russe</option>
-					<option value="ARA">Arabe</option>
-					<option value="HEB">Hébreu</option>
-				</select> <br> <br> 
-					
-			<Input type="radio" name="choix" value="notes" required> Notes de cours <br> 
-				Spécifier le cours 
-				<Input type="text" name="choixNotes">
-		
-		</div>
-		
-		<div id="bouton2" style="display: none;"> 
+	<div id="bouton2" style="display: none;"> 
 			<a id="typeOffre" href="" class="bouton">Continuer</a>
-			<a id="typeRetour1" href="" class="bouton">Retour</a>
-			<br>
-		</div>
+			<a id="typeRetour1" href="" class="bouton">Retour</a><br>
+	</div>
 		
 		
-		<div id="annonceRediger" style="display: none;">
-		<div class="h2"><h2>Rédiger une annonce</h2></div>
+	<div id="annonceRediger" style="display: none;">
+		<h2>Rédiger une annonce</h2>
 		
 			<table>
 				<tr>
 					<td>Titre de l'annonce</td>
-					<td><Input type="text" style="width: 98%" name="nomannonce" required></td>
+					<td><Input type="text" style="width: 60%" name="nomannonce" required></td>
 				</tr>
 
 				<tr>
@@ -188,7 +200,7 @@
 				</tr>
 
 			</table>
-			<div class="h2"><h2>Contact</h2></div>
+			<h2>Contact</h2>
 
 			<table>
 				<tr>
