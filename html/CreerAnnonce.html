@@ -6,13 +6,9 @@
 <title>UniVerse, plateforme d'échange de l'Université de Neuchâtel</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="/css/creerAnnonce.css" />
-<link rel="stylesheet" href="/css/main.css">
-
-
-
 </head>
+
 <body>
 
 	<script	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -62,10 +58,11 @@
 			$('#annonceValider').hide();});});
 	</script>
 	
-	<div class="content">
-
+<div class="content">
+		
+		<div class="header">Connecté en tant que : "user" | Logout</div>
 		<div class="logo"><img src="/img/Logo-unine.png" alt="Unine Logo" /></div>
-		<div class="user">Connecté en tant que: "user" | Logout</div>
+		
 
 		<ul class="nav">
 				<li class="nav-item"><a href="">Type de l'annonce</a></li>
@@ -73,8 +70,9 @@
 				<li class="nav-item"><a href="">Rédiger l'annonce </a></li>
 				<li class="nav-item"><a href="">Valider l'annonce</a></li>
 		</ul>
-		<div class="band">Petites annonces de l'université de Neuchâtel</div>
 		
+		
+		<div class = "form">
 		<Form method="post" action="creer/sauvegarder"> 
 			
 		<div id="annonceType" style="display: block;">
@@ -236,17 +234,19 @@
 	
 		<div id="annonceValider" style="display: none;">
 			
-			
+			<br><br>
 			<Input type="checkbox" required> Je confirme avoir lu et accepté les conditions générales <br>
 		
 			
+			
+			<input type="submit" value="Enregistrer" class="submit"/>
 			<a id="typeRetour3" href="" class="bouton">Retour</a>
-			<input type="submit" value="Enregistrer" class="bouton"/><br><br>
 			
 		</div>
-		</form>	
-		
-	</div>
+		</form>
+	</div>	
+	<div class="footer">Petites annonces de l'université de Neuchâtel</div>	
+</div>
 
 
 
