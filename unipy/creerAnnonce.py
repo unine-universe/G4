@@ -20,18 +20,20 @@ class CreerAnnonce(object):
     
     def save(self, **kwargs):
         print(kwargs)
-        if 'type' in kwargs and 'publisher' in kwargs and 'category' in kwargs and 'title' in kwargs:
+        if 'type' in kwargs and 'category' in kwargs and'faculty' in kwargs and 'title' in kwargs:
             db = openDB()
             cursor = db.cursor()
             cursor.execute("INSERT INTO annonce VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
-                           (kwargs['type'], kwargs['publisher'], kwargs['category'], '', kwargs['title'], '', 0, 'to_discuss', '', '', '', '', '', '', '', ''))
+                           (kwargs['type'], kwargs['publisher'], kwargs['category'],kwargs['faculty'], kwargs['title'], '', '', '', '', '', '', '', '', '', '' ,''))
             # Enregistrer les insertions.
             db.commit()
             if cursor.rowcount == 1:
-                return '<h1>Annonce enregistrée</h1><p><a href="/compte">Aller sur mon compte</a></p>'
+                return self.env.get_template('CreerAnnonce.html').render(msg = "Annonce enregistrée !")
+                #TODO : bouton aller sur mon compte --> <a href="/compte">Aller sur mon compte</a></p>'
             else:
-                return self.env.get_template('CreerAnnonce.html').render(msg = "Erreur d'enregistre...")
+                #TODO : afficher le msg à la fin
+                return self.env.get_template('CreerAnnonce.html').render(msg = "Erreur d'enregistrement !")
             cursor.close()
             db.close()
         else:
-            return self.env.get_template('CreerAnnonce.html').render(msg = "Manque de paramètres..")
+            return self.env.get_template('CreerAnnonce.html').render(msg = "Il manque des paramètres... Réessayez")

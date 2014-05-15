@@ -96,9 +96,36 @@
 		<h2>Choix de la faculté :</h2>
 		
 		<table>
+			
+			<tr> <Input type="text" style="width: 60%" name="publisher" required> </tr>
+				
+				
+			<tr><td><h2>Choix de la catégorie :</h2></td></tr>
+		
+			<tr>
+				<td><Input type="radio" name="category" value="1" required>  Livres </td>
+			</tr>
+			
+			<tr>		
+				<td><Input type="radio" name="category" value="2" required> Cours de soutien</td>
+				
+			</tr>
+			
+			<tr>	
+				<td><Input type="radio" name="category" value="3" required> Logements</td> 
+			</tr>
+			
+			<tr>		
+				<td><Input type="radio" name="category" value="4" required> Cours de langue</td> 
+			</tr>
+			
+			<tr>		
+				<td><Input type="radio" name="category" value="5" required> Notes de cours <br> </td>
+			</tr>
+			
 			<tr>
 				<td> Faculté : </td>
-				<td><select id="faculte" size="1">
+				<td><select id="faculty" size="1">
 					<option value="FLSH">Lettres et Sciences Humaines</option>
 					<option value="FSE">Sciences Economiques</option>
 					<option value="FD">Droit</option>
@@ -107,70 +134,11 @@
 					<option value="ALL">Toutes</option>
 				</select></td>	
 			</tr>
-		
-			<tr><td><h2>Choix de la catégorie :</h2></td></tr>
-		
-			<tr>
-				<td><Input type="radio" name="choix" value="livres" required>  Livres </td>
-				<td><select name="choixLivres" size="1">
-						<option value="de cours">de cours</option>
-						<option value="autres">Autres</option>
-					</select></td>
-			</tr>
-			
-			<tr>		
-				<td><Input type="radio" name="choix" value="soutien" required> Cours de soutien</td>
-				<td><select name="choixSoutien" size="1">
-						<optgroup label="FSE">
-							<option value="ecointer">Eco Inter.</option>
-						</optgroup>
-						<optgroup label="FD">
-							<option value="droit constit">Droit Constit</option>
-						</optgroup>
-						<optgroup label="FLSH">
-							<option value="philo">Philo</option>
-						</optgroup>
-						<optgroup label="FD">
-							<option value="seigneur">Seigneur</option>
-						</optgroup>
-						<optgroup label="FS">
-							<option value="Bio">Biologie</option>
-						</optgroup>
-					</select></td>
-			</tr>
-			
-			<tr>	
-				<td><Input type="radio" name="choix" value="logements" required> Logements</td> 
-				<td><select name="choixLogements" size="1">
-						<option value="coloc">Colocation</option>
-						<option value="appart">Appartements</option>
-						<option value="chambre single">Chambre individuelle</option>
-						<option value="chambre double">Chambre double</option>
-					</select> </td> 
-			</tr>
-			
-			<tr>		
-				<td><Input type="radio" name="choix" value="courslangue" required> Cours de langue</td> 
-				<td><select name="choixCourslangue" size="1">
-						<option value="FR">Français</option>
-						<option value ="ENG">Anglais</option>
-						<option value ="DE">Allemand</option>
-						<option value="IT">Italien</option>
-						<option value="ESP">Espagnol</option>
-						<option value="CHN">Chinois/mandarin</option>
-						<option value="RUS">Russe</option>
-						<option value="ARA">Arabe</option>
-						<option value="HEB">Hébreu</option>
-					</select></td>
-			</tr>
-			
-			<tr>		
-				<td><Input type="radio" name="choix" value="notes" required> Notes de cours <br> </td>
-				<td><Input type="text" name="choixNotes">(Spécifier le cours)</td>
-			</tr>
 			
 		</table>
-	</div><br><br>
+	</div>
+	
+	<br><br>
 	
 	<div id="bouton2" style="display: none;"> 
 			<a id="typeOffre" href="" class="bouton">Continuer</a>
@@ -184,18 +152,18 @@
 			<table>
 				<tr>
 					<td>Titre de l'annonce</td>
-					<td><Input type="text" style="width: 60%" name="nomannonce" required></td></tr>
+					<td><Input type="text" style="width: 60%" name="title" required></td></tr>
 
 				<tr>
 					<td>Description de l'annonce</td>
-					<td width="60%"><textarea rows="5" cols="40" name="description"> Tapez ici votre description </textarea></td></tr>
+					<td width="60%"><textarea rows="5" cols="40" name="desc"> Tapez ici votre description </textarea></td></tr>
 
 				<tr>
 					<td>Prix de l'annonce</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="prixannonce" required></td>
+					<td><Input type="text" style="width: 98%; height: 100%" name="price" required></td>
 				<tr>
-					<td>Image</td>
-					<td><Input type="file" style="width: 98%; height: 100%" name="image"></td></tr>
+					<!-- <td>Image</td>
+					<td><Input type="file" style="width: 98%; height: 100%" name="image"></td></tr> -->
 
 			</table>
 			<h2>Contact</h2>
@@ -203,29 +171,29 @@
 			<table>
 				<tr>
 					<td>Nom</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="nomfamille" required></td></tr>
+					<td><Input type="text" style="width: 98%; height: 100%" name="contact_name" ></td></tr>
 
 				<tr>
 					<td>Prénom</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="prenom" required></td></tr>
+					<td><Input type="text" style="width: 98%; height: 100%" name="prenom" ></td></tr>
 
 				<tr>
 					<td>Adresse/Numéro</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="adresse" required></td>
+					<td><Input type="text" style="width: 98%; height: 100%" name="address" required></td>
 					<td><Input type="number" min="1" max="200" style="width: 98%" name="numero"></td></tr>
 
 				<tr>
 					<td>NPA/localité</td>
-					<td><Input type="number" min="1000" max="9699" style="width: 98%; height: 100%" name="NPA" required></td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="localite" required></td></tr>
+					<td><Input type="number" min="1000" max="9699" style="width: 98%; height: 100%" name="npa" required></td>
+					<td><Input type="text" style="width: 98%; height: 100%" name="city" required></td></tr>
 
 				<tr>
-					<td>Adresse mail</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="mail"></td></tr>
+					<!-- <td>Adresse mail</td>
+					<td><Input type="text" style="width: 98%; height: 100%" name="contact_mail"></td></tr> -->
 
 				<tr>
 					<td>Téléphone</td>
-					<td><Input type="text" style="width: 98%; height: 100%" name="telephone" required></td></tr>
+					<td><Input type="text" style="width: 98%; height: 100%" name="contact_phone" required></td></tr>
 
 			</table>
 
