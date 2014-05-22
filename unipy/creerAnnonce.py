@@ -19,12 +19,11 @@ class CreerAnnonce(object):
         return self.env.get_template('CreerAnnonce.html').render()
     
     def save(self, **kwargs):
-        print(kwargs)
-        if 'type' in kwargs and 'category' in kwargs and'faculty' in kwargs and 'title' in kwargs:
+        if 'type' in kwargs and 'category' in kwargs and 'title' in kwargs:
             db = openDB()
             cursor = db.cursor()
-            cursor.execute("INSERT INTO annonce VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
-                           (kwargs['type'], kwargs['publisher'], kwargs['category'],kwargs['faculty'], kwargs['title'], '', '', '', '', '', '', '', '', '', '' ,''))
+            cursor.execute("INSERT INTO annonce VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)", 
+                           (kwargs['type'], kwargs['category'], kwargs['title'], '', '', '', '', '', '', '', '', '', '', '', '',''))
             # Enregistrer les insertions.
             db.commit()
             if cursor.rowcount == 1:

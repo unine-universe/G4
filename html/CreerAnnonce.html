@@ -75,7 +75,7 @@
 		
 	<div class = "form">
 		<h1 class="message">{{ msg }}</h1>
-		<Form method="post" action="creer/sauvegarder"> 
+		<Form method="post" action="/creer/sauvegarder"> 
 			
 		<div id="annonceType" style="display: block;">
 			
@@ -94,6 +94,8 @@
 	<div id="annonceOffre" style="display: none;">	
 		
 		<h2>Choix de la faculté :</h2>
+		
+		<table>
 			<tr>
 				<td> Faculté : </td>
 				<td><select id="faculty" size="1">
@@ -105,11 +107,7 @@
 					<option value="ALL">Toutes</option>
 				</select></td>	
 			</tr>
-		
-		<table>
-			
-			<tr> <Input type="text" style="width: 60%" name="publisher" required> </tr>
-				
+							
 				
 			<tr><td><h2>Choix de la catégorie :</h2></td></tr>
 		
